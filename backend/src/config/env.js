@@ -16,8 +16,8 @@ export const env = {
   port: Number(process.env.PORT) || 4000,
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
 
-  databaseUrl: required('DATABASE_URL'),
-  pgSsl: process.env.PGSSL === 'true',
+ databaseUrl: process.env.DATABASE_URL,
+  pgSsl: false,
 
   jwtSecret: required('JWT_SECRET', 'dev_only_insecure_secret'),
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
