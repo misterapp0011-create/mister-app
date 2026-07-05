@@ -12,7 +12,7 @@ export function createApp() {
   const app = express();
 
   app.use(helmet());
-  app.use(cors({ origin: env.clientUrl, credentials: true }));
+  app.use(cors({ origin: ['https://mister-app-beta.vercel.app', 'http://localhost:5173'], credentials: true }));
   app.use(morgan(env.nodeEnv === 'development' ? 'dev' : 'combined'));
   app.use(express.json({ limit: '2mb' }));
   app.use(express.urlencoded({ extended: true }));
